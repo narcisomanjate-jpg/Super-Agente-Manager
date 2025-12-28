@@ -1,6 +1,7 @@
 {
   "name": "super-agente-manager",
   "version": "1.0.0",
+  "homepage": "narcisomanjate-jpg.github.io",
   "description": "Financial management app for agents in Mozambique",
   "main": "index.html",
   "type": "module",
