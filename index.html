@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Agente Manager</title>
+    <!-- Liga o manifest PWA -->
+    <link rel="manifest" href="/Super-Agente-Manager/manifest.json">
+    <!-- Regista o Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/Super-Agente-Manager/sw.js')
+          .then(reg => console.log('Service Worker Registado'))
+          .catch(err => console.error('Erro no Service Worker', err));
+      }
+    </script>
+    <!-- Adicione aqui a importação do Tailwind CSS, se o seu projeto usa -->
+    <!-- Exemplo: <link href="cdn.jsdelivr.net" rel="stylesheet"> -->
+</head>
+<body>
+    <!-- O elemento raiz onde a sua aplicação React será carregada -->
+    <div id="root"></div>
+    
+    <!-- Carrega o script principal da aplicação (usando type="module" para React/JS moderno) -->
+    <script type="module" src="/Super-Agente-Manager/index.js"></script>
+</body>
+</html>
