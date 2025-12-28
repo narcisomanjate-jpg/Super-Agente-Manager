@@ -1,0 +1,35 @@
+# Simple workflow for deploying a Vite application to GitHub Pages
+name: Deploy Vite App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Dispara o workflow sempre que houver um push para a branch 'main'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20' # Use uma versão recente do Node.js
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build # Executa o comando "vite build" do seu package.json
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist # O Vite coloca os ficheiros compilados na pasta 'dist'
+        cname: narcisomanjate-jpg.github.io
