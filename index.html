@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Agente Manager</title>
-    <!-- Liga o manifest PWA -->
-    <link rel="manifest" href="/Super-Agente-Manager/manifest.json">
-    <!-- Regista o Service Worker -->
+    <!-- Liga o manifest PWA (caminho relativo) -->
+    <link rel="manifest" href="./manifest.json">
+    <!-- Regista o Service Worker (caminho relativo) -->
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/Super-Agente-Manager/sw.js')
+        navigator.serviceWorker.register('./sw.js')
           .then(reg => console.log('Service Worker Registado'))
           .catch(err => console.error('Erro no Service Worker', err));
       }
@@ -21,7 +21,7 @@
     <!-- O elemento raiz onde a sua aplicação React será carregada -->
     <div id="root"></div>
     
-    <!-- Carrega o script principal da aplicação (usando type="module" para React/JS moderno) -->
-    <script type="module" src="/Super-Agente-Manager/index.js"></script>
+    <!-- Carrega o script principal da aplicação (caminho relativo) -->
+    <script type="module" src="./index.js"></script>
 </body>
 </html>
